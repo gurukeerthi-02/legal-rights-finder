@@ -1,13 +1,14 @@
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { Search, Filter, X } from 'lucide-react'
-import { legalTypes } from '@/data/legalData'
+import { legalTypes, categories } from '@/data/legalData'
 import { searchLegalRemedies, type SearchResult } from '@/lib/searchEngine'
 import Logo from '@/components/Logo'
 import './SearchPage.css'
 
 export default function SearchPage() {
   const navigate = useNavigate()
+  const [searchParams] = useSearchParams()
   const [query, setQuery] = useState('')
   const [results, setResults] = useState<SearchResult[]>([])
   const [loading, setLoading] = useState(false)
@@ -15,8 +16,20 @@ export default function SearchPage() {
   const [selectedFilters, setSelectedFilters] = useState<string[]>([])
   const [searched, setSearched] = useState(false)
 
-  const handleSearch = async () => {
-    if (!query.trim() && selectedFilters.length === 0) {
+  useEffect(() => {
+    const categoryParam = searchParams.get('category')
+    if (categoryParam) {
+      const category = categories.find(c => c.id === categoryParam)
+      if (category) {
+        setQuery(category.keywords[0] || category.name)
+        setSearched(true)
+        handleSearchWithQuery(category.keywords[0] || category.name)
+      }
+    }
+  }, [searchParams])
+
+  const handleSearchWithQuery = async (searchQuery: string = query) => {
+    if (!searchQuery.trim() && selectedFilters.length === 0) {
       return
     }
 
@@ -25,7 +38,7 @@ export default function SearchPage() {
 
     try {
       const { results: searchResults } = await searchLegalRemedies({
-        query,
+        query: searchQuery,
         filters: selectedFilters,
       })
       setResults(searchResults)
@@ -36,6 +49,8 @@ export default function SearchPage() {
       setLoading(false)
     }
   }
+
+  const handleSearch = () => handleSearchWithQuery()
 
   const toggleFilter = (filterId: string) => {
     setSelectedFilters(prev =>
@@ -58,31 +73,16 @@ export default function SearchPage() {
 
   const handleExampleSearch = async (exampleQuery: string) => {
     setQuery(exampleQuery)
-    setSearched(true)
-    setLoading(true)
-
-    try {
-      const { results: searchResults } = await searchLegalRemedies({
-        query: exampleQuery,
-        filters: selectedFilters,
-      })
-      setResults(searchResults)
-    } catch (error) {
-      console.error('Search error:', error)
-      setResults([])
-    } finally {
-      setLoading(false)
-    }
+    handleSearchWithQuery(exampleQuery)
   }
 
   return (
     <div className="search-page">
-      <div className="header">
-        <div className="header-logo">
-          <Logo size={40} showText={false} />
+      <div className="hero-section">
+        <div className="hero-content">
+          <h1 className="hero-title">Find Your Legal Rights</h1>
+          <p className="hero-subtitle">Discover legal remedies and protections under Indian law</p>
         </div>
-        <h1 className="header-title">Legal Rights Finder</h1>
-        <p className="header-subtitle">Know Your Rights Under Indian Law</p>
       </div>
 
       <div className="search-section">

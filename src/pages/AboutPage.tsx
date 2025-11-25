@@ -5,12 +5,11 @@ import './AboutPage.css'
 export default function AboutPage() {
   return (
     <div className="about-page">
-      <div className="header">
-        <div className="header-logo">
-          <Logo size={40} showText={false} />
+      <div className="hero-section">
+        <div className="hero-content">
+          <h1 className="hero-title">About Legal Rights Finder</h1>
+          <p className="hero-subtitle">Empowering citizens with accessible legal knowledge</p>
         </div>
-        <h1 className="header-title">About Legal Rights Finder</h1>
-        <p className="header-subtitle">Empowering citizens with legal knowledge</p>
       </div>
 
       <div className="content">
