@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
-import { Search, BookOpen, Info, Menu, X } from 'lucide-react'
+import { Home, BookOpen, Info, Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import Logo from './Logo'
 import './Layout.css'
@@ -13,7 +13,7 @@ export default function Layout({ children }: LayoutProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navItems = [
-    { path: '/', icon: Search, label: 'Search' },
+    { path: '/', icon: Home, label: 'Home' },
     { path: '/browse', icon: BookOpen, label: 'Browse' },
     { path: '/about', icon: Info, label: 'About' },
   ]

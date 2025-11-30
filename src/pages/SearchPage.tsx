@@ -79,9 +79,18 @@ export default function SearchPage() {
   return (
     <div className="search-page">
       <div className="hero-section">
+        <div className="news-ticker">
+          <div className="ticker-content">
+            <span>🚨 Delhi: 2,423 domestic violence cases reported in 2023 - Know your rights under DV Act</span>
+            <span>⚖️ Mumbai: 1,847 workplace harassment complaints filed - POSH Act provides protection</span>
+            <span>🛡️ Bangalore: 3,156 cyber crime cases - IT Act 2000 offers legal remedies</span>
+            <span>📊 Chennai: 892 property disputes resolved through legal aid - Article 32 guarantees constitutional remedies</span>
+            <span>🏥 Kolkata: 1,234 medical negligence cases - Consumer Protection Act ensures patient rights</span>
+          </div>
+        </div>
         <div className="hero-content">
-          <h1 className="hero-title">Find Your Legal Rights</h1>
-          <p className="hero-subtitle">Discover legal remedies and protections under Indian law</p>
+          <h1 className="hero-title">Legal Rights Finder</h1>
+          <p className="hero-subtitle">Empowering citizens with knowledge of their legal rights and remedies</p>
         </div>
       </div>
 
