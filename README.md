@@ -88,7 +88,11 @@ src/
 └── hooks/              # Custom React hooks
 ```
 
-## 🌐 Deployment
+## 🌐 Live Application
+
+**🔗 Access the app:** [https://legal-rights-finder.vercel.app/](https://legal-rights-finder.vercel.app/)
+
+## 🚀 Deployment
 
 ### Deploy to Vercel
 ```bash

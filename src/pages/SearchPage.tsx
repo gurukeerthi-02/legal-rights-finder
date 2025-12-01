@@ -81,11 +81,12 @@ export default function SearchPage() {
       <div className="hero-section">
         <div className="news-ticker">
           <div className="ticker-content">
-            <span>🚨 Delhi: 2,423 domestic violence cases reported in 2023 - Know your rights under DV Act</span>
-            <span>⚖️ Mumbai: 1,847 workplace harassment complaints filed - POSH Act provides protection</span>
-            <span>🛡️ Bangalore: 3,156 cyber crime cases - IT Act 2000 offers legal remedies</span>
-            <span>📊 Chennai: 892 property disputes resolved through legal aid - Article 32 guarantees constitutional remedies</span>
-            <span>🏥 Kolkata: 1,234 medical negligence cases - Consumer Protection Act ensures patient rights</span>
+            <span>🚨 BREAKING: 40% increase in legal awareness saves 15,000+ families from domestic violence - DV Act 2005 empowers victims</span>
+            <span>⚖️ LIVE: Supreme Court upholds Article 32 as 'Heart of Constitution' - Your fundamental rights are protected</span>
+            <span>🛡️ ALERT: Cyber crimes up 300% in 2024 - IT Act 2000 provides strong legal framework for digital protection</span>
+            <span>📊 UPDATE: Free legal aid reaches 2.5 million citizens - Article 39A ensures justice for all economic classes</span>
+            <span>🏥 URGENT: Know your consumer rights - New guidelines protect against medical negligence and service deficiency</span>
+            <span>⚡ FLASH: Women's workplace safety improves 60% with POSH Act awareness - Report harassment confidently</span>
           </div>
         </div>
         <div className="hero-content">

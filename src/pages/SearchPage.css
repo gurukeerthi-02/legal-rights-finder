@@ -33,6 +33,8 @@
   overflow: hidden;
   white-space: nowrap;
   border-bottom: 2px solid rgba(6, 182, 212, 0.3);
+  opacity: 1;
+  visibility: visible;
 }
 
 .ticker-content {
@@ -40,6 +42,7 @@
   animation: scroll 60s linear infinite;
   font-size: 14px;
   font-weight: 600;
+  animation-delay: 0s;
 }
 
 .ticker-content span {
@@ -49,7 +52,7 @@
 
 @keyframes scroll {
   0% {
-    transform: translateX(100%);
+    transform: translateX(0%);
   }
   100% {
     transform: translateX(-100%);
